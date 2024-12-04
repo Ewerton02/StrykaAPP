@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35325.158
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrykaAPP", "StrykaAPP\StrykaAPP.csproj", "{32C19638-D575-4E91-82CA-2020EB949D37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32C19638-D575-4E91-82CA-2020EB949D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C19638-D575-4E91-82CA-2020EB949D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C19638-D575-4E91-82CA-2020EB949D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C19638-D575-4E91-82CA-2020EB949D37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6187724-23DC-40EE-8578-538E07AE67FD}
+	EndGlobalSection
+EndGlobal

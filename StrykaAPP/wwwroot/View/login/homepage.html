@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/Estilos/home/homepage.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-but-wrap">
+            <div class="menu-icon hover-target">
+                <span class="menu-icon__line menu-icon__line-left"></span>
+                <span class="menu-icon__line"></span>
+                <span class="menu-icon__line menu-icon__line-right"></span>
+            </div>
+        </div>
+        <div>
+            <div id="divLogoMenu">
+                <img src="../../Imagens/Logotipo_águia_futebol_americano__1_-removebg-preview.png" />
+            </div>
+            <div class="header-container">
+                <h1>Bem Vindo, <span id="username">User</span>!</h1>
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+    </header>
+    <div class="nav">
+        <div class="nav__content">
+            <ul class="nav__list">
+                <li class="nav__list-item active-nav"><a href="#" class="hover-target">Home</a></li>
+                <li class="nav__list-item"><a href="#" class="hover-target">Relatórios</a></li>
+                <li class="nav__list-item"><a href="#" class="hover-target">Análise de video</a></li>
+                <li class="nav__list-item"><a href="#" class="hover-target">News</a></li>
+                <li class="nav__list-item"><a href="#" class="hover-target">Sobre nós</a></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <div class="placar">
+            <div class="placarValor">
+                <samp class="nomeTime">CASA</samp>
+                <h1>0</h1>
+            </div>
+            <div style=" width: 0.3%; background: #2b375d;"></div>
+            <div class="placarValor">
+                <h1>0</h1>
+                <samp class="nomeTime">VISITANTE</samp>
+            </div>
+        </div>
+        <div style="background-color: #ffffff; width: 100em; height: 2em; display: flex; border: 3px solid #2b375d; border-top: none;">
+            <div style=" background-color: #455381; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center;">
+                <span style=" font-weight: bold; color: white;">CASA</span>
+            </div>
+            <div style=" background-color: #bbbbbb; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; border: 3px solid #2b375d; border-bottom: none; border-top: none;">
+                <span style=" font-weight: bold; color: white;">RESUMO</span>
+            </div>
+            <div style="background-color: #ff6b6b; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; ">
+                <span style=" font-weight: bold; color: white;">VISITANTE</span>
+            </div>
+        </div>
+        <div style="background-color: #ffffff; width: 100em; height: 2em; display: flex; border: 3px solid #2b375d; border-top: none;">
+            <div style=" background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center;">
+                <span style=" font-weight: bold; color: white;">TIRO DE META</span>
+            </div>
+            <div style="background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; border: 3px solid #2b375d; border-bottom: none; border-top: none;">
+                <span style=" font-weight: bold; color: white;">ESTÁTISTICA</span>
+            </div>
+            <div style="background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; ">
+                <span style=" font-weight: bold; color: white;">TIRO DE META</span>
+            </div>
+        </div>
+
+        <!--DIV TIRO DE META CASA-->
+        <div style="background-color: #ffffff; width: 100em; height: 2em; display: flex; border: 3px solid #2b375d; border-top: none;">
+            <div style=" background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 33%; display:contents;">
+                    <input class="button_tiro_meta" type="button" value="Saiu Jogando" />
+                </div>
+                <div style=" width: 33%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style=" width: 33%; height: 100%; background: white; display: flex; align-items: center; justify-content: center;">
+                    <span>0%</span>
+                </div>
+            </div>
+
+            <!--DIV ESTATISTICA-->
+            <div style="background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; border: 3px solid #2b375d; border-bottom: none; border-top: none;">
+                <div style="width:25%">
+                    <input class="button_estatisticas" type="button" value="Finalização" />
+                </div>
+                <div style=" width: 25%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style=" width: 25%; height: 100%; background: white; border: 3px solid #2b375d; border-left: none; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style="width:25%">
+                    <input class="button_estatisticas" type="button" value="Finalização" />
+                </div>
+            </div>
+
+            <!--DIV TIRO DE META VISITANTE-->
+            <div style="background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; ">
+                <div style=" width: 33%; height: 100%; background: white; display: flex; align-items: center; justify-content: center;">
+                    <span>0%</span>
+                </div>
+                <div style=" width: 33%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style="width: 33%; display:contents;">
+                    <input class="button_tiro_meta" type="button" value="Saiu Jogando" />
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    // Exibe o nome do usuário (pode ser armazenado no localStorage ou JWT decodificado)
+    const username = localStorage.getItem("username");
+    document.getElementById("username").textContent = username;
+
+    // Logout
+    document.getElementById("logout").addEventListener("click", () => {
+        localStorage.clear(); // Remove dados armazenados
+        window.location.href = "index.html"; // Redireciona para o login
+    });
+
+
+    var app = function () {
+        var body = undefined;
+        var menu = undefined;
+        var menuItems = undefined;
+        var init = function init() {
+            body = document.querySelector('body');
+            menu = document.querySelector('.menu-icon');
+            menuItems = document.querySelectorAll('.nav__list-item');
+            applyListeners();
+        };
+        var applyListeners = function applyListeners() {
+            menu.addEventListener('click', function () {
+                return toggleClass(body, 'nav-active');
+            });
+        };
+        var toggleClass = function toggleClass(element, stringClass) {
+            if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
+        };
+        init();
+    }();
+
+</script>
+
