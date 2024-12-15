@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="/Estilos/home/homepage.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -77,13 +78,13 @@
         <div style="background-color: #ffffff; width: 100em; height: 2em; display: flex; border: 3px solid #2b375d; border-top: none;">
             <div style=" background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center;">
                 <div style="width: 33%; display:contents;">
-                    <input class="button_tiro_meta" type="button" value="Saiu Jogando" />
+                    <input id="addSaiuJogandoCasa" class="button_tiro_meta" type="button" value="Saiu Jogando" onclick="addSaidaCasa()" />
                 </div>
                 <div style=" width: 33%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
-                    <span>0</span>
+                    <span id="valorSaiuJogandoCasa">0</span>
                 </div>
                 <div style=" width: 33%; height: 100%; background: white; display: flex; align-items: center; justify-content: center;">
-                    <span>0%</span>
+                    <span id="porcentagemSaiuJogandoCasa">0%</span>
                 </div>
             </div>
 
@@ -117,6 +118,50 @@
             </div>
 
         </div>
+        <!--DIV TIRO DE META CASA-->
+        <div style="background-color: #ffffff; width: 100em; height: 2em; display: flex; border: 3px solid #2b375d; border-top: none;">
+            <div style=" background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 33%; display:contents;">
+                    <input id="addAtaqueDiretoCasa" class="button_tiro_meta" type="button" value="Ataque Direto" onclick="addAtaqueDireto()" />
+                </div>
+                <div style=" width: 33%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
+                    <span id="valorAtaqueDiretoCasa">0</span>
+                </div>
+                <div style=" width: 33%; height: 100%; background: white; display: flex; align-items: center; justify-content: center;">
+                    <span id="porcentagemAtaqueDiretoCasa">0%</span>
+                </div>
+            </div>
+
+            <!--DIV ESTATISTICA-->
+            <div style="background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; border: 3px solid #2b375d; border-bottom: none; border-top: none;">
+                <div style="width:25%">
+                    <input class="button_estatisticas" type="button" value="Impedimento" />
+                </div>
+                <div style=" width: 25%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style=" width: 25%; height: 100%; background: white; border: 3px solid #2b375d; border-left: none; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style="width:25%">
+                    <input class="button_estatisticas" type="button" value="Impedimento" />
+                </div>
+            </div>
+
+            <!--DIV TIRO DE META VISITANTE-->
+            <div style="background-color: #e7c940; width: 33.33em; height: 2em; display: flex; justify-content: center; align-items: center; ">
+                <div style=" width: 33%; height: 100%; background: white; display: flex; align-items: center; justify-content: center;">
+                    <span>0%</span>
+                </div>
+                <div style=" width: 33%; height: 100%; background: white; border: 3px solid #2b375d; display: flex; align-items: center; justify-content: center;">
+                    <span>0</span>
+                </div>
+                <div style="width: 33%; display:contents;">
+                    <input class="button_tiro_meta" type="button" value="Ataque Direto" />
+                </div>
+            </div>
+
+        </div>
     </main>
 </body>
 </html>
@@ -131,7 +176,6 @@
         localStorage.clear(); // Remove dados armazenados
         window.location.href = "index.html"; // Redireciona para o login
     });
-
 
     var app = function () {
         var body = undefined;
@@ -153,6 +197,50 @@
         };
         init();
     }();
+
+    // Função que atualizar as porcentagens dinamicamente //
+
+    function atualizarPorcentagens() {
+
+        // Seleciona todos os elementos que têm valores
+        const elementos = [
+            { valor: $("#valorSaiuJogandoCasa"), porcentagem: $("#porcentagemSaiuJogandoCasa") },
+            { valor: $("#valorAtaqueDiretoCasa"), porcentagem: $("#porcentagemAtaqueDiretoCasa") }
+        ];
+
+        // Calcula o total geral
+        let total = 0;
+        elementos.forEach(element => {
+            total += parseInt(element.valor.text());
+        });
+
+        // Atualiza a porcentagem para cada elemento
+        elementos.forEach(element => {
+            const valorAtual = parseInt(element.valor.text());
+            const porcentagem = total > 0 ? ((valorAtual / total) * 100).toFixed(1) : 0; // Calcula a porcentagem
+            element.porcentagem.text(`${porcentagem}%`);
+        });
+    }
+
+    // Funções que incrementar o valor de Saiu Jogando //
+
+    function addSaidaCasa() {
+        const valorElement = $("#valorSaiuJogandoCasa");
+        let valorAtual = parseInt(valorElement.text());
+        valorAtual++;
+        valorElement.text(valorAtual);
+
+        atualizarPorcentagens(); // Recalcula as porcentagens
+    }
+
+    function addAtaqueDireto() {
+        const valorElement = $("#valorAtaqueDiretoCasa");
+        let valorAtual = parseInt(valorElement.text());
+        valorAtual++;
+        valorElement.text(valorAtual);
+
+        atualizarPorcentagens();
+    }
 
 </script>
 

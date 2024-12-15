@@ -95,7 +95,6 @@ namespace StrykaAPP.Controllers
                     return Unauthorized("Invalid email or password.");
                 }
 
-                // Lê os dados do usuário
                 reader.Read();
                 var user = new User
                 {
